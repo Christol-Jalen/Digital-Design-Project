@@ -84,37 +84,37 @@ ARCHITECTURE structural OF AHB_bridge IS
 
 BEGIN
 -----------------------------------------------------
-  A2: state_machine
+  A1: state_machine
   port map(
-    HADDR => sig_HADDR;
-    HSIZE => sig_HSIZE;
-    HTRANS => sig_HTRANS;
-    HWDATA => sig_HWDATA;
-    HWRITE => sig_HWRITE;
-    HREADY => sig_HREADY;
-    dmai => sig_dmai;
-    dmao => sig_dmao;
-    clk => sig_clk;
-    rst => sig_rst;
-); 
+    HADDR => sig_HADDR,
+    HSIZE => sig_HSIZE,
+    HTRANS => sig_HTRANS,
+    HWDATA => sig_HWDATA,
+    HWRITE => sig_HWRITE,
+    HREADY => sig_HREADY,
+    dmai => sig_dmai,
+    dmao => sig_dmao,
+    clk => sig_clk,
+    rst => sig_rst
+  ); 
 --instantiate state_machine component and make the connections
 
-  A1: ahbmst
+  A2: ahbmst
   port map(
-    ahbo => sig_ahbo;
-    ahbi => sig_ahbi;
-    dmai => sig_dmai;
-    dmao => sig_dmao;
-    clk => sig_clk;
-    rst => sig_rst;
+    ahbo => sig_ahbo,
+    ahbi => sig_ahbi,
+    dmai => sig_dmai,
+    dmao => sig_dmao,
+    clk => sig_clk,
+    rst => sig_rst
   );
     
 --instantiate the ahbmst component and make the connections 
 
   A3: data_swapper
   port map(
-    dmao => sig_dmao;
-    HRDATA => sig_HRDATA;
+    dmao => sig_dmao,
+    HRDATA => sig_HRDATA
   );
 
 --instantiate the data_swapper component and make the connections

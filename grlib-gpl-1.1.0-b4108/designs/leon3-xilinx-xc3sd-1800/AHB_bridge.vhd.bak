@@ -31,6 +31,7 @@ END;
 
 ARCHITECTURE structural OF AHB_bridge IS
   --declare a component for state_machine
+  
   COMPONENT state_machine IS
     PORT(
       HADDR : IN std_logic_vector (31 downto 0);
@@ -66,21 +67,42 @@ ARCHITECTURE structural OF AHB_bridge IS
     );
   END COMPONENT; 
 
-SIGNAL sig_dmai : ahb_dma_in_type;
-SIGNAL sig_dmao : ahb_dma_out_type;
-SIGNAL sig_clk : std_logic;
-SIGNAL sig_rst : std_logic;
+
+  SIGNAL sig_dmai : ahb_dma_in_type;
+  SIGNAL sig_dmao : ahb_dma_out_type;
+  SIGNAL sig_clk : std_logic;
+  SIGNAL sig_rst : std_logic;
+  SIGNAL sig_HADDR : std_logic_vector (31 downto 0);
+  SIGNAL sig_HSIZE : std_logic_vector (2 downto 0);
+  SIGNAL sig_HTRANS : std_logic_vector (1 downto 0);
+  SIGNAL sig_HWDATA : std_logic_vector (31 downto 0);
+  SIGNAL sig_HWRITE : std_logic;
+  SIGNAL sig_HREADY : std_logic;
+  SIGNAL sig_ahbo : ahb_mst_out_type;
+  SIGNAL sig_ahbi : ahb_mst_in_type;
 
 
 BEGIN
 -----------------------------------------------------
-
+  A1: state_machine
+  port map(
+    HADDR => sig_HADDR,
+    HSIZE => sig_HSIZE,
+    HTRANS => sig_HTRANS,
+    HWDATA => sig_HWDATA,
+    HWRITE => sig_HWRITE,
+    HREADY => sig_HREADY,
+    dmai => sig_dmai,
+    dmao => sig_dmao,
+    clk => sig_clk,
+    rst => sig_rst
+  ); 
 --instantiate state_machine component and make the connections
 
-  A1: ahbmst
+  A2: ahbmst
   port map(
-    ahbo => 
-    ahbi => 
+    ahbo => sig_ahbo;
+    ahbi => sig_ahbi;
     dmai => sig_dmai;
     dmao => sig_dmao;
     clk => sig_clk;
@@ -88,6 +110,12 @@ BEGIN
   );
     
 --instantiate the ahbmst component and make the connections 
+
+  A3: data_swapper
+  port map(
+    dmao => sig_dmao;
+    HRDATA => sig_HRDATA;
+  );
 
 --instantiate the data_swapper component and make the connections
 
