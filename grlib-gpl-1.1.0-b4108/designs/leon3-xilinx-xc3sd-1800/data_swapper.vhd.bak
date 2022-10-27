@@ -17,3 +17,13 @@ Entity data_swapper IS
       HRDATA : OUT std_logic_vector (31 downto 0); 
     );
 END;
+
+
+ARCHITECTURE structure of data_swapper IS
+BEGIN
+-----------------------------------------------------
+  swap_data: PROCESS(dmao)
+  BEGIN
+    
+-----------------------------------------------------
+END structure;
