@@ -14,7 +14,7 @@ use UNISIM.VComponents.all;
 Entity data_swapper IS
   PORT(
     dmao : IN ahb_dma_out_type;
-    HRDATA : OUT std_logic_vector (31 downto 0); 
+    HRDATA : OUT std_logic_vector (31 downto 0)
   );
 END;
 
@@ -27,7 +27,7 @@ BEGIN
     HRDATA(31 downto 24) <= dmao.rdata(7 downto 0);
     HRDATA(23 downto 16) <= dmao.rdata(15 downto 8);
     HRDATA(15 downto 8) <= dmao.rdata(23 downto 16);
-    HRDATA(8 downto 0) <= dmao.rdata(31 downto 24);
+    HRDATA(7 downto 0) <= dmao.rdata(31 downto 24);
   END PROCESS;
 -----------------------------------------------------
 END structure;

@@ -84,9 +84,8 @@ ARCHITECTURE structural OF AHB_bridge IS
 
 
 BEGIN
------------------------------------------------------
-  
-  A0: AHB_bridge
+-----------------------------------------------------  
+  A0: entity AHB_bridge
   port map(
     HADDR => sig_HADDR,
     HSIZE => sig_HSIZE,
@@ -97,7 +96,7 @@ BEGIN
     HREADY => sig_HREADY,
     
     ahbmi => sig_ahbi,
-    ahbmo => sig_ahbo,
+    ahbmo => sig_ahbmo,
     
     clkm => sig_clk,
     rstn => sig_rst
