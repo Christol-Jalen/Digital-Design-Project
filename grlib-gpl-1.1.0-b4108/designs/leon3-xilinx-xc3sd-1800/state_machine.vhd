@@ -20,7 +20,7 @@ ENTITY state_machine IS
       HREADY : OUT std_logic;
       dmai : OUT ahb_dma_in_type;
       dmao : IN ahb_dma_out_type; 
-      clkm : IN  std_logic;
+      clkm : IN std_logic;
       rstn : IN std_logic
     );
 END;
@@ -37,6 +37,8 @@ ARCHITECTURE structure of state_machine IS
   SIGNAL sig_HTRANS : std_logic_vector (1 downto 0);
   SIGNAL sig_dmao : ahb_dma_out_type;
   SIGNAL sig_dmai : ahb_dma_in_type;
+  SIGNAl sig_clkm : std_logic;
+  SIGNAL sig_rstn : std_logic;
   
 BEGIN 
   A0: entity state_machine IS
@@ -46,7 +48,9 @@ BEGIN
     HTRANS => sig_HTRANS,
     HWDATA => sig_HWDATA,
     HWRITE => sig_HWRITE,
-    HREADY => sig_HREADY
+    HREADY => sig_HREADY,
+    dmai => sig_dmai,
+    dmao => sig_dmao
   );
 -----------------------------------------------------
   Change: PROCESS(curState, sig_HTRANS, sig_dmao)

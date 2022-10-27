@@ -16,21 +16,23 @@
 
 } {} {}} ../../lib/gaisler/greth/ethernet_mac.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/greth/ethernet_mac.vhd
 
-} {} {}} ../../lib/gaisler/misc/grgpreg.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/misc/grgpreg.vhd
+} {} {}} ../../lib/gaisler/leon3/iu3.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/leon3/iu3.vhd
 
 } {} {}} ../../lib/gaisler/greth/greth_mb.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/greth/greth_mb.vhd
 
-} {} {}} ../../lib/gaisler/leon3/iu3.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/leon3/iu3.vhd
+} {} {}} ../../lib/techmap/maps/ddr_oreg.vhd {1 {vcom -work techmap -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/techmap/maps/ddr_oreg.vhd
 
 } {} {}} ../../lib/techmap/maps/iopad_ddr.vhd {1 {vcom -work techmap -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/techmap/maps/iopad_ddr.vhd
 
-} {} {}} ../../lib/techmap/maps/ddr_oreg.vhd {1 {vcom -work techmap -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/techmap/maps/ddr_oreg.vhd
+} {} {}} ../../lib/gaisler/misc/grgpreg.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/misc/grgpreg.vhd
 
 } {} {}} ../../lib/gaisler/misc/gracectrl.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/misc/gracectrl.vhd
 
 } {} {}} ../../lib/gaisler/sim/ahbrep.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/sim/ahbrep.vhd
 
 } {} {}} ../../lib/tech/unisim/ise/unisim_VCOMP.vhd {1 {vcom -work unisim -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/tech/unisim/ise/unisim_VCOMP.vhd
+
+} {} {}} N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/AHB_bridge.vhd {1 {vcom -work work -93 -explicit -quiet -source -nowarn 1 -nowarn 5 -novopt N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/AHB_bridge.vhd
 
 } {} {}} ../../lib/techmap/maps/leon4_net.vhd {1 {vcom -work techmap -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/techmap/maps/leon4_net.vhd
 
@@ -49,8 +51,6 @@
 } {} {}} ../../lib/tech/dware/simprims/DW_Foundation_arith.vhd {1 {vcom -work dware -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/tech/dware/simprims/DW_Foundation_arith.vhd
 
 } {} {}} ../../lib/gaisler/leon3/grlfpwx.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/leon3/grlfpwx.vhd
-
-} {} {}} ../../lib/techmap/unisim/pads_unisim.vhd {1 {vcom -work techmap -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/techmap/unisim/pads_unisim.vhd
 
 } {} {}} ../../lib/work/debug/grtestmod.vhd {2 {vcom -work work -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/grtestmod.vhd
 ###### N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/grtestmod.vhd(84): end;
