@@ -43,11 +43,11 @@ ARCHITECTURE structural OF AHB_bridge IS
       dmai : OUT ahb_dma_in_type;
       dmao : IN ahb_dma_out_type; 
       clkm : IN  std_logic;
-      rstn : IN std_logic;
+      rstn : IN std_logic
     );
   END COMPONENT;  
   
-  --declare a component for ahbmst
+  --declare a component for ahbmstclkm
   COMPONENT ahbmst IS
     PORT(
       ahbo : OUT ahb_mst_out_type;
@@ -55,7 +55,7 @@ ARCHITECTURE structural OF AHB_bridge IS
       dmai : IN ahb_dma_in_type;
       dmao : OUT ahb_dma_out_type;
       clk : IN  std_logic;
-      rst : IN std_logic;
+      rst : IN std_logic
     );
   END COMPONENT; 
   
@@ -63,7 +63,7 @@ ARCHITECTURE structural OF AHB_bridge IS
   COMPONENT data_swapper IS
     PORT(
       dmao : IN ahb_dma_out_type;
-      HRDATA : OUT std_logic_vector (31 downto 0); 
+      HRDATA : OUT std_logic_vector (31 downto 0)
     );
   END COMPONENT; 
 
@@ -78,12 +78,31 @@ ARCHITECTURE structural OF AHB_bridge IS
   SIGNAL sig_HWDATA : std_logic_vector (31 downto 0);
   SIGNAL sig_HWRITE : std_logic;
   SIGNAL sig_HREADY : std_logic;
+  SIGNAL sig_HRDATA : std_logic_vector (31 downto 0);
   SIGNAL sig_ahbo : ahb_mst_out_type;
   SIGNAL sig_ahbi : ahb_mst_in_type;
 
 
 BEGIN
 -----------------------------------------------------
+  
+  A0: ENTITY AHB_bridge
+  port map(
+    HADDR => sig_HADDR,
+    HSIZE => sig_HSIZE,
+    HTRANS => sig_HTRANS,
+    HWDATA => sig_HWDATA,
+    HRDATA => sig_HRDATA,
+    HWRITE => sig_HWRITE,
+    HREADY => sig_HREADY,
+    
+    ahbmi => sig_ahbi,
+    ahbmo => sig_ahbo,
+    
+    clkm => sig_clk,
+    rstn => sig_rst
+  );
+  
   A1: state_machine
   port map(
     HADDR => sig_HADDR,
@@ -92,10 +111,12 @@ BEGIN
     HWDATA => sig_HWDATA,
     HWRITE => sig_HWRITE,
     HREADY => sig_HREADY,
+    
     dmai => sig_dmai,
     dmao => sig_dmao,
-    clk => sig_clk,
-    rst => sig_rst
+    
+    clkm => sig_clk,
+    rstn => sig_rst
   ); 
 --instantiate state_machine component and make the connections
 
@@ -103,8 +124,10 @@ BEGIN
   port map(
     ahbo => sig_ahbo,
     ahbi => sig_ahbi,
+    
     dmai => sig_dmai,
     dmao => sig_dmao,
+    
     clk => sig_clk,
     rst => sig_rst
   );

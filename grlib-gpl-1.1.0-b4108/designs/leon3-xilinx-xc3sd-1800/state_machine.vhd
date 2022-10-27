@@ -33,6 +33,9 @@ ARCHITECTURE structure of state_machine IS
   -- State declaration
   TYPE state_type IS (idle, instr_fetch);  	
   SIGNAL curState, nextState: state_type;
+  SIGNAL sig_HADDR, sig_HWDATA: std_logic_vector (31 downto 0);
+  SIGNAL sig_HSIZE: std_logic_vector (2 downto 0);
+  SIGNAL sig_HWRITE: std_logic;
 BEGIN
 -----------------------------------------------------
   NextState: PROCESS(curState, htrans, dmao.ready)
@@ -54,7 +57,7 @@ BEGIN
     END CASE;
   END PROCESS; -- NextState
   -----------------------------------------------------
-  States: PROCESS (curState)
+  States: PROCESS (curState, HADDR, HSIZE, HWDATA, HWRITE)
   BEGIN
     IF curState = idle THEN
       hready <= '1';
@@ -63,6 +66,13 @@ BEGIN
     ELSIF curState = instr_fetch THEN
       hready <= '0';
       dmai.start <= '0';
+      dmai.address <= sig_HADDR;
+      dmai.size <= sig_HSIZE;
+      dmai.wdata <= sig_HWDATA;
+      dmai.write <= sig_HWRITE;
     END IF;
   END PROCESS;
+-----------------------------------------------------
+ 
+-----------------------------------------------------
 END structure;
