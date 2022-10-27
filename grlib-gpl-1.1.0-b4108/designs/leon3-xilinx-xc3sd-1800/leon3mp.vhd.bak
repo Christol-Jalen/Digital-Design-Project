@@ -264,7 +264,7 @@ begin
 -- Cortex-M0 processor
   cm0gen : if CFG_CM0 = 1 generate
     u1 : cm0_wrapper
-      port map (clkm, rstn, ahbmi, ahbmo(0));
+      port map (clkm, rstn, ahbmi, ahbmo(0);
 end generate;
 
   -- LEON3 processor
