@@ -17,3 +17,15 @@ Entity data_swapper IS
       HRDATA : OUT std_logic_vector (31 downto 0); 
     );
 END;
+
+
+
+ARCHITECTURE structure of data_swapper IS
+  -- State declaration
+  TYPE state_type IS (idle, instr_fetch);  	
+  SIGNAL curState, nextState: state_type;
+BEGIN
+-----------------------------------------------------
+
+-----------------------------------------------------
+END structure;

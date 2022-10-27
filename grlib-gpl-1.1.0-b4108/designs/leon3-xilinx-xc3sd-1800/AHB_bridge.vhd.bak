@@ -82,7 +82,7 @@ BEGIN
     ahbo => 
     ahbi => 
     dmai => sig_dmai;
-    dmao => sig_dmao;s
+    dmao => sig_dmao;
     clk => sig_clk;
     rst => sig_rst;
   );

@@ -4,113 +4,113 @@ K3
 cModel Technology
 Z0 d/home/eejlny/projects/leon3_ERTS/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800
 Eahb_bridge
-Z1 w1666870749
-Z2 DPx6 unisim 11 vcomponents 0 22 hMjo2zK]ScI_H][A^HPNj0
-Z3 DPx7 techmap 7 gencomp 0 22 fA@NZ:l4lLPzZlfC6BX<H0
-Z4 DPx7 gaisler 4 misc 0 22 d6SO014Ae7CN46I_AT_L73
-Z5 DPx5 grlib 7 devices 0 22 nEIY2egb_A1[g<OiA2GW70
-Z6 DPx5 grlib 7 version 0 22 >jR3zO06i<iLn<WLl>[7h0
-Z7 DPx5 grlib 6 stdlib 0 22 o2[D5dlKH>oYhgb]5XZZk0
-Z8 DPx5 grlib 6 config 0 22 iQh6CG>o^WbeQZSL:=]Ai2
-Z9 DPx5 grlib 4 amba 0 22 f_JkUSh>VSK]e^QdO^JMD0
-Z10 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z11 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z12 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z13 dN:\GODS08\grlib-gpl-1.1.0-b4108\designs\leon3-xilinx-xc3sd-1800
+w1666875951
+Z1 DPx6 unisim 11 vcomponents 0 22 hMjo2zK]ScI_H][A^HPNj0
+Z2 DPx7 techmap 7 gencomp 0 22 fA@NZ:l4lLPzZlfC6BX<H0
+Z3 DPx7 gaisler 4 misc 0 22 d6SO014Ae7CN46I_AT_L73
+Z4 DPx5 grlib 7 devices 0 22 nEIY2egb_A1[g<OiA2GW70
+Z5 DPx5 grlib 7 version 0 22 >jR3zO06i<iLn<WLl>[7h0
+Z6 DPx5 grlib 6 stdlib 0 22 o2[D5dlKH>oYhgb]5XZZk0
+Z7 DPx5 grlib 6 config 0 22 iQh6CG>o^WbeQZSL:=]Ai2
+Z8 DPx5 grlib 4 amba 0 22 f_JkUSh>VSK]e^QdO^JMD0
+Z9 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z10 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z11 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z12 dN:\GODS08\grlib-gpl-1.1.0-b4108\designs\leon3-xilinx-xc3sd-1800
 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/AHB_bridge.vhd
 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/AHB_bridge.vhd
 l0
 L13
 V?1LkLfJ6cF0hOzckADf342
 !s100 fBd8NBQlWVRIYcK`n0HW@0
-Z14 OL;C;10.1b;51
+Z13 OL;C;10.1b;51
 31
 !i10b 1
-!s108 1666870940.984000
+!s108 1666875951.716000
 !s90 -reportprogress|300|-work|work|-93|-explicit|-quiet|-source|-nowarn|1|-nowarn|5|-novopt|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/AHB_bridge.vhd|
 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/AHB_bridge.vhd|
 o-work work -93 -explicit -quiet -source -nowarn 1 -nowarn 5
-Z15 tShow_source 1 Show_Warning1 0 Show_Warning5 0 Explicit 1 Quiet 1
+Z14 tShow_source 1 Show_Warning1 0 Show_Warning5 0 Explicit 1 Quiet 1
 Eahbrom
-R1
+Z15 w1666870749
+R4
 R5
 R6
 R7
+R9
 R8
 R10
-R9
 R11
 R12
-R13
 Z16 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/ahbrom.vhd
 Z17 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/ahbrom.vhd
 l0
 L18
 V;<37X2B14EY1B0I>:b]0D1
-R14
+R13
 31
-Z18 !s108 1666870940.328000
+Z18 !s108 1666875943.554000
 Z19 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/ahbrom.vhd|
 Z20 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/ahbrom.vhd|
 Z21 !s102 -cover s
 Z22 o-work work -93 -source -nowarn 1 -nowarn 5 -cover s
-R15
+R14
 !s100 M;o:gHC_id9i?NZlNeoWK3
 !i10b 1
 Artl
+R4
 R5
 R6
 R7
+R9
 R8
 R10
-R9
 R11
-R12
 Z23 DEx4 work 6 ahbrom 0 22 ;<37X2B14EY1B0I>:b]0D1
 l46
 L34
 V`H>LofZ3mC=N<S<2B20:D0
-R14
+R13
 31
 R18
 R19
 R20
 R21
 R22
-R15
+R14
 !s100 _o@CM]8LULP:h4cmYOR6A3
 !i10b 1
 Pconfig
+R5
 R6
 R7
+R9
 R8
 R10
-R9
 R11
+R2
+R15
 R12
-R3
-R1
-R13
 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/config.vhd
 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/config.vhd
 l0
 L13
 VNg0iXBmZ=0jmhXC1Sa[aH0
-R14
+R13
 31
 R21
 R22
-R15
+R14
 !s100 4UIHz@GlE5OTcBi@A1fDA1
 !i10b 1
-!s108 1666870940.245000
+!s108 1666875943.467000
 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/config.vhd|
 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/config.vhd|
 vCORTEXM0DS
 IRZ<8B3kU3bg5?;P[`ALbd0
 V1L6Qg_jd`_h[58QfX:Ek]0
-R13
-R1
+R12
+R15
 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/CORTEXM0DS.v
 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/CORTEXM0DS.v
 L0 27
@@ -123,14 +123,14 @@ n@c@o@r@t@e@x@m0@d@s
 !i10b 1
 !s100 J<lELK4P_FNf0Qd^ozbEB3
 !s85 0
-!s108 1666870940.632000
+!s108 1666875943.876000
 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/CORTEXM0DS.v|
 !s90 -reportprogress|300|-work|work|-quiet|-novopt|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/CORTEXM0DS.v|
 vcortexm0ds_logic
 I<:W^7GK[`R0FzlUddH<nB1
 V^^SAMV@Xd[IRUm[K>SzZ<3
-R13
-R1
+R12
+R15
 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/cortexm0ds_logic.v
 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/cortexm0ds_logic.v
 L0 27
@@ -142,215 +142,215 @@ R26
 !i10b 1
 !s100 dd@Zf2B]mIM5EJG6?agcW0
 !s85 0
-!s108 1666870940.696000
+!s108 1666875943.944000
 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/cortexm0ds_logic.v|
 !s90 -reportprogress|300|-work|work|-quiet|-novopt|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/cortexm0ds_logic.v|
 Ecpu_disas
 Z27 w1666870752
 Z28 DPx5 grlib 11 sparc_disas 0 22 ?h3QW`cB[>Z;J67F?z9nQ0
 Z29 DPx5 grlib 5 sparc 0 22 R?GCaYSbA`Kg3XYU^Tdlz2
+R5
 R6
-R7
+R9
 R10
 R11
 R12
-R13
 Z30 8N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/cpu_disas.vhd
 Z31 FN:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/cpu_disas.vhd
 l0
 L36
 VKSPGb^5EA4QbYK1?`0j;g3
-R14
+R13
 31
-Z32 !s108 1666870940.150000
+Z32 !s108 1666875943.368000
 Z33 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/cpu_disas.vhd|
 Z34 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/cpu_disas.vhd|
 R21
 R22
-R15
+R14
 !s100 BJa8WZ>[MW<0jk;aRCm[b3
 !i10b 1
 Abehav
 R28
 R29
+R5
 R6
-R7
+R9
 R10
 R11
-R12
 DEx4 work 9 cpu_disas 0 22 KSPGb^5EA4QbYK1?`0j;g3
 l53
 L52
 V3FV2Aa?L][Aoia[fmHSJA1
-R14
+R13
 31
 R32
 R33
 R34
 R21
 R22
-R15
+R14
 !s100 _[5c318P4X`G5CVS_UE0d0
 !i10b 1
 Pdebug
+R5
 R6
 R7
+R9
 R8
 R10
-R9
 R11
-R12
 R27
-R13
+R12
 8N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/debug.vhd
 FN:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/debug.vhd
 l0
 L31
 VUKYDnZfS:aT>_415YS@3F3
-R14
+R13
 31
 R21
 R22
-R15
+R14
 !s100 >2?o60cYoUCRdY1PWEJzg3
 !i10b 1
-!s108 1666870939.987000
+!s108 1666875943.197000
 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/debug.vhd|
 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/debug.vhd|
 Egaisler_cpu_disas
 R27
 R28
 R29
+R5
 R6
-R7
+R9
 R10
 R11
 R12
-R13
 R30
 R31
 l0
 L89
 V1bnSY07l=LAeE^Y@<zf;X2
-R14
+R13
 31
 R32
 R33
 R34
 R21
 R22
-R15
+R14
 !s100 GdTf>db1P?1Ge2jaiM^=_2
 !i10b 1
 Abehav
 R28
 R29
+R5
 R6
-R7
+R9
 R10
 R11
-R12
 DEx4 work 17 gaisler_cpu_disas 0 22 1bnSY07l=LAeE^Y@<zf;X2
 l106
 L105
 VTEzZ8I?>1kOB^_LMKZhJ`2
-R14
+R13
 31
 R32
 R33
 R34
 R21
 R22
-R15
+R14
 !s100 EN]aXPjQkkL?_a;J3E9Tg3
 !i10b 1
 Egrtestmod
 R27
-R5
-R8
-R9
-Z35 DPx5 grlib 5 stdio 0 22 a;KkQ@mB[4BjaV2P64L>^2
-R6
-R10
+R4
 R7
+R8
+Z35 DPx5 grlib 5 stdio 0 22 a;KkQ@mB[4BjaV2P64L>^2
+R5
+R9
+R6
 Z36 DPx7 gaisler 3 sim 0 22 kQiV@MFUHYXA]HOY1jGSl1
+R10
 R11
 R12
-R13
 Z37 8N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/grtestmod.vhd
 Z38 FN:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/grtestmod.vhd
 l0
 L67
 VKT[OzK0Qn>XD0d4Tb[@C12
-R14
+R13
 31
-Z39 !s108 1666870940.060000
+Z39 !s108 1666875943.274000
 Z40 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/grtestmod.vhd|
 Z41 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/lib/work/debug/grtestmod.vhd|
 R21
 R22
-R15
+R14
 !s100 4SPzUf^QXfCEGK>k[4z1Q2
 !i10b 1
 Asim
-R5
-R8
-R9
-R35
-R6
-R10
+R4
 R7
+R8
+R35
+R5
+R9
+R6
 R36
+R10
 R11
-R12
 DEx4 work 9 grtestmod 0 22 KT[OzK0Qn>XD0d4Tb[@C12
 l98
 L86
 VoSXHHU]zPSgb?FZZaQ0_A2
-R14
+R13
 31
 R39
 R40
 R41
 R21
 R22
-R15
+R14
 !s100 E14S8M[?:IanSi`C7hCMk1
 !i10b 1
 Eleon3mp
-R1
+R15
 Z42 DPx4 work 6 config 0 22 Ng0iXBmZ=0jmhXC1Sa[aH0
 Z43 DPx3 esa 10 memoryctrl 0 22 V2k;^KE?0QMZ@:Pa7kjiR2
 Z44 DPx7 gaisler 4 jtag 0 22 aLRhU_`ZK1e`=nEJfEJ<C2
 Z45 DPx7 gaisler 3 net 0 22 Uf43:zzRWfjleTaedzkWL0
-R4
+R3
 Z46 DPx7 gaisler 4 uart 0 22 gi__23a[PIZocPK>CR]iD2
 Z47 DPx7 gaisler 5 leon3 0 22 YH0AacVmlYB4c9kMe[z]o3
 Z48 DPx7 gaisler 7 memctrl 0 22 <6TodZlN8gn:cQ8J;14iQ1
 Z49 DPx7 techmap 9 allclkgen 0 22 ce2LeHMGTnQzYoUO:1^;W3
-R3
+R2
+R4
 R5
 R6
 R7
+R9
 R8
 R10
-R9
 R11
 R12
-R13
 Z50 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd
 Z51 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd
 l0
 L44
 V<Mdkm]JbOWCgdR?VE_@Bn3
-R14
+R13
 31
-Z52 !s108 1666870940.414000
+Z52 !s108 1666875943.644000
 Z53 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd|
 Z54 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd|
 R21
 R22
-R15
+R14
 !s100 `00W@X1[nbe11Q6C@OTzY3
 !i10b 1
 Artl
@@ -359,32 +359,32 @@ R42
 R43
 R44
 R45
-R4
+R3
 R46
 R47
 R48
 R49
-R3
+R2
+R4
 R5
 R6
 R7
+R9
 R8
 R10
-R9
 R11
-R12
 Z55 DEx4 work 7 leon3mp 0 22 <Mdkm]JbOWCgdR?VE_@Bn3
 l211
 L129
 VcG?2PLhV[o<Q]m`MOPCFU3
-R14
+R13
 31
 R52
 R53
 R54
 R21
 R22
-R15
+R14
 !s100 ;kTb?3@>?8c<odLVn^6al2
 !i10b 1
 Etestbench
@@ -396,32 +396,32 @@ Z59 DPx5 hynix 10 components 0 22 o8_LgJF_XU[3A5M_AZLI@0
 Z60 DPx6 micron 10 components 0 22 0TIhCD]P[_JiP8=;eZK8f2
 R35
 R36
-R3
-R5
+R2
 R4
+R3
 R46
+R5
 R6
 R7
-R8
-R10
 R9
+R8
 Z61 DPx7 gaisler 7 libdcom 0 22 aBf[HY;mCCl`R5]fmGVVS0
+R10
 R11
 R12
-R13
 Z62 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd
 Z63 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd
 l0
 L42
 VQWHaMiY@PTmT?P5U?[MI_1
-R14
+R13
 31
-Z64 !s108 1666870940.527000
+Z64 !s108 1666875943.759000
 Z65 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd|
 Z66 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd|
 R21
 R22
-R15
+R14
 !s100 hdYXOz[00TYb6Ac2n@MoH2
 !i10b 1
 Abehav
@@ -439,29 +439,29 @@ R59
 R60
 R35
 R36
-R3
-R5
+R2
 R4
+R3
 R46
+R5
 R6
 R7
-R8
-R10
 R9
+R8
 R61
+R10
 R11
-R12
 DEx4 work 9 testbench 0 22 QWHaMiY@PTmT?P5U?[MI_1
 l136
 L55
 V;FBK2MR[S>BiZ@^9KzJn83
-R14
+R13
 31
 R64
 R65
 R66
 R21
 R22
-R15
+R14
 !s100 oNML2<9bl:4K:>:[J00IJ0
 !i10b 1

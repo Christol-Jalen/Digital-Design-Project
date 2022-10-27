@@ -1,3 +1,10 @@
+
+
+
+
+
+
+ARCHITECTURE ............
   -- State declaration
   TYPE state_type IS (idle, instr_fetch);  	
   SIGNAL curState, nextState: state_type;
