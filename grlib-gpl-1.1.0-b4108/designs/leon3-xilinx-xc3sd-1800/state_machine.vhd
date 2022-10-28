@@ -31,40 +31,21 @@ ARCHITECTURE structure of state_machine IS
   -- State declaration
   TYPE state_type IS (idle, instr_fetch);  	
   SIGNAL curState, nextState: state_type;
-  SIGNAL sig_HADDR, sig_HWDATA: std_logic_vector (31 downto 0);
-  SIGNAL sig_HSIZE: std_logic_vector (2 downto 0);
-  SIGNAL sig_HWRITE: std_logic;
-  SIGNAL sig_HTRANS : std_logic_vector (1 downto 0);
-  SIGNAL sig_dmao : ahb_dma_out_type;
-  SIGNAL sig_dmai : ahb_dma_in_type;
-  SIGNAl sig_clkm : std_logic;
-  SIGNAL sig_rstn : std_logic;
   
 BEGIN 
-  A0: entity state_machine IS
-  port map(
-    HADDR => sig_HADDR,
-    HSIZE => sig_HSIZE,
-    HTRANS => sig_HTRANS,
-    HWDATA => sig_HWDATA,
-    HWRITE => sig_HWRITE,
-    HREADY => sig_HREADY,
-    dmai => sig_dmai,
-    dmao => sig_dmao
-  );
------------------------------------------------------
-  Change: PROCESS(curState, sig_HTRANS, sig_dmao)
+  -----------------------------------------------------
+  Change: PROCESS(curState, dmao)
   BEGIN
     CASE curState IS
       WHEN idle =>
-        IF sig_HTRANS = '10' THEN 
+        IF HTRANS = '10' THEN 
           nextState <= instr_fetch;
         ELSE
           nextState <= curState;
         END IF;
         
       WHEN instr_fetch =>
-        IF sig_dmao.ready ='1' THEN
+        IF dmao.ready ='1' THEN
           nextState <= idle;
         ELSE
           nextState <= curState;
@@ -72,22 +53,29 @@ BEGIN
     END CASE;
   END PROCESS; -- NextState
   -----------------------------------------------------
-  States: PROCESS (curState, sig_HADDR, sig_HSIZE, sig_HWDATA, sig_HWRITE, sig_dmai)
+  States: PROCESS (curState)
   BEGIN
     IF curState = idle THEN
       hready <= '1';
-      sig_dmai.start <= '0';
+      dmai.start <= '0';
       
     ELSIF curState = instr_fetch THEN
       hready <= '0';
-      sig_dmai.start <= '0';
-      sig_dmai.address <= sig_HADDR;
-      sig_dmai.size <= sig_HSIZE;
-      sig_dmai.wdata <= sig_HWDATA;
-      sig_dmai.write <= sig_HWRITE;
+      dmai.start <= '0';
+      dmai.address <= HADDR;
+      dmai.size <= HSIZE;
+      dmai.wdata <= HWDATA;
+      dmai.write <= HWRITE;
     END IF;
   END PROCESS;
 -----------------------------------------------------
-
+  seq_state: PROCESS (clkm, rstn)
+  BEGIN
+    IF rstn = '1' THEN
+      curState <= idle;
+    ELSIF rising_edge(clkm) THEN
+      curState <= nextState;
+    END IF;
+  END PROCESS;
 -----------------------------------------------------
 END structure;

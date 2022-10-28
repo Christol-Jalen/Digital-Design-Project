@@ -18,3 +18,6 @@
 # Compile of cm0_wrapper.vhd failed with 6 errors.
 # Compile of cm0_wrapper.vhd failed with 1 errors.
 # Compile of cm0_wrapper.vhd was successful.
+# Compile of state_machine.vhd failed with 3 errors.
+# Compile of state_machine.vhd failed with 4 errors.
+# Compile of state_machine.vhd failed with 1 errors.
