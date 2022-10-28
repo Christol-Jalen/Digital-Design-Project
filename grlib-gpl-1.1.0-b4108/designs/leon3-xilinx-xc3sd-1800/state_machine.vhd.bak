@@ -20,7 +20,7 @@ ENTITY state_machine IS
       HREADY : OUT std_logic;
       dmai : OUT ahb_dma_in_type;
       dmao : IN ahb_dma_out_type; 
-      clkm : IN  std_logic;
+      clkm : IN std_logic;
       rstn : IN std_logic
     );
 END;

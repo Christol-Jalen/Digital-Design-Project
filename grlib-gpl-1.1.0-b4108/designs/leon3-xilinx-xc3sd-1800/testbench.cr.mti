@@ -1,3 +1,7 @@
-../../lib/eth/comp/ethcomp.vhd {1 {vcom -work eth -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/eth/comp/ethcomp.vhd
+../../lib/grlib/amba/amba.vhd {1 {vcom -work grlib -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/grlib/amba/amba.vhd
+
+} {} {}} ../../lib/gaisler/misc/ahbmst.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/gaisler/misc/ahbmst.vhd
+
+} {} {}} ../../lib/eth/comp/ethcomp.vhd {1 {vcom -work eth -93 -source -nowarn 1 -nowarn 5 -cover s N:/GODS08/grlib-gpl-1.1.0-b4108/lib/eth/comp/ethcomp.vhd
 
 } {} {}}
