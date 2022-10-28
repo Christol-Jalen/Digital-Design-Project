@@ -550,9 +550,14 @@
 
 } {} {}} ../../lib/gaisler/ddr/ddr2spa.vhd {1 {vcom -work gaisler -93 -source -nowarn 1 -nowarn 5 -cover s N:/grlib-gpl-1.1.0-b4108/lib/gaisler/ddr/ddr2spa.vhd
 
-} {} {}} leon3mp.vhd {1 {vcom -work work -93 -source -nowarn 1 -nowarn 5 -cover s N:/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd
+} {} {}} leon3mp.vhd {0 {vcom -work work -93 -source -nowarn 1 -nowarn 5 -cover s N:/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd
+###### N:/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd(232):     ahbmo(0) => ahbmo(0)
+** Error: N:/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd(232): (vcom-1067) Illegal choice (integer literal "0") in record aggregate. Legal choices are element_simple_name and OTHERS.
 
-} {} {}} ../../lib/techmap/maps/cpu_disas_net.vhd {1 {vcom -work techmap -93 -source -nowarn 1 -nowarn 5 -cover s N:/grlib-gpl-1.1.0-b4108/lib/techmap/maps/cpu_disas_net.vhd
+###### N:/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd(638): end rtl;
+** Error: N:/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/leon3mp.vhd(638): VHDL Compiler exiting
+
+} {3.0 4.0 6.0 7.0} {}} ../../lib/techmap/maps/cpu_disas_net.vhd {1 {vcom -work techmap -93 -source -nowarn 1 -nowarn 5 -cover s N:/grlib-gpl-1.1.0-b4108/lib/techmap/maps/cpu_disas_net.vhd
 
 } {} {}} N:/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/CORTEXM0DS.v {1 {vlog -work work -quiet -novopt N:/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/CORTEXM0DS.v
 
