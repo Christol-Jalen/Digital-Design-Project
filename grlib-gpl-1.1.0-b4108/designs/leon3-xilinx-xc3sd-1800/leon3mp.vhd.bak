@@ -208,29 +208,8 @@ architecture rtl of leon3mp is
 
   constant BOARD_FREQ : integer := 125000;                                -- input frequency in KHz
   constant CPU_FREQ   : integer := BOARD_FREQ * CFG_CLKMUL / CFG_CLKDIV;  -- cpu frequency in KHz
-  
-  
-  COMPONENT cm0_wrapper IS
-    PORT(
-      -- Clock and Reset -----------------
-      clkm : IN std_logic;
-      rstn : IN std_logic;
-      -- AHB Master records --------------
-      ahbmi : IN ahb_mst_in_type;
-      ahbmo : OUT ahb_mst_out_type
-    --- need a led signal ---
-    );
-  END COMPONENT;
-  
-  
 begin
-  u1: cm0_wrapper
-  port map(
-    clkm => clkm,
-    rstn => rstn,
-    ahbmi => ahbmi,
-    ahbmo => ahbmo
-  );
+
 ----------------------------------------------------------------------
 ---  Reset and Clock generation  -------------------------------------
 ----------------------------------------------------------------------
@@ -268,12 +247,6 @@ begin
 ----------------------------------------------------------------------
 ---  LEON3 processor and DSU -----------------------------------------
 ----------------------------------------------------------------------
-
--- Cortex-M0 processor
-  cm0gen : if CFG_CM0 = 1 generate
-    u1 : cm0_wrapper
-      port map (clkm, rstn, ahbmi, ahbmo(0));
-  end generate;
 
   -- LEON3 processor
   leon3gen : if CFG_LEON3 = 1 generate

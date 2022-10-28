@@ -195,3 +195,4 @@ package config is
 -- GRLIB debugging
   constant CFG_DUART : integer := 1;
 end;
+
