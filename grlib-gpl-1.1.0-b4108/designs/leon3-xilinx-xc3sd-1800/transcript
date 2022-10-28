@@ -14,3 +14,7 @@
 # Compile of AHB_bridge.vhd failed with 3 errors.
 # Compile of AHB_bridge.vhd failed with 3 errors.
 # Compile of AHB_bridge.vhd was successful.
+# Compile of cm0_wrapper.vhd failed with 27 errors.
+# Compile of cm0_wrapper.vhd failed with 6 errors.
+# Compile of cm0_wrapper.vhd failed with 1 errors.
+# Compile of cm0_wrapper.vhd was successful.

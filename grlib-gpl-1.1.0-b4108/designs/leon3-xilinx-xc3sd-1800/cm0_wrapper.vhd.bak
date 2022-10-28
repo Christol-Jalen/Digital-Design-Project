@@ -18,6 +18,8 @@ ENTITY cm0_wrapper IS
     -- AHB Master records --------------
     ahbmi : IN ahb_mst_in_type;
     ahbmo : OUT ahb_mst_out_type
+    
+    --- need a led signal ---
 );
 END;
 
@@ -55,7 +57,7 @@ COMPONENT CORTEXM0DS
   HWRITE : OUT std_logic;            -- AHB write control
   HRDATA : IN std_logic_vector (31 downto 0);            -- AHB read-data
   HREADY : IN std_logic;            -- AHB stall signal
-  HRESP : IN std_logic;             -- AHB error response
+  --HRESP : IN std_logic;             -- AHB error response
 
   -- MISCELLANEOUS ---------------------
   --input  wire        NMI,               -- Non-maskable interrupt input
@@ -64,16 +66,16 @@ COMPONENT CORTEXM0DS
   --input  wire        RXEV,              -- Event input
   --output wire        LOCKUP,            -- Core is locked-up
   --output wire        SYSRESETREQ,       -- System reset request
-  NMI : IN std_logic;               -- Non-maskable interrupt input
-  IRQ : IN std_logic_vector (15 downto 0);               -- Interrupt request inputs
-  TXEV : OUT std_logic;              -- Event output (SEV executed)
-  RXEV : IN std_logic;              -- Event input
-  LOCKUP : OUT std_logic;            -- Core is locked-up
-  SYSRESETREQ : OUT std_logic;       -- System reset request
+  --NMI : IN std_logic;               -- Non-maskable interrupt input
+  --IRQ : IN std_logic_vector (15 downto 0);               -- Interrupt request inputs
+  --TXEV : OUT std_logic;              -- Event output (SEV executed)
+  --RXEV : IN std_logic;              -- Event input
+  --LOCKUP : OUT std_logic;            -- Core is locked-up
+  --SYSRESETREQ : OUT std_logic;       -- System reset request
 
   -- POWER MANAGEMENT ------------------
   --output wire        SLEEPING           -- Core and NVIC sleeping
-  SLEEPING : OUT std_logic          -- Core and NVIC sleeping
+  --SLEEPING : OUT std_logic          -- Core and NVIC sleeping
 );
 END COMPONENT;
 
@@ -92,14 +94,68 @@ signal led_value:std_logic;
 signal reset_rom: std_logic;
 signal SyncResetPulse : std_logic;
 
+SIGNAL sig_HADDR : std_logic_vector (31 downto 0); -- AHB transaction address
+SIGNAL sig_HSIZE : std_logic_vector (2 downto 0); -- AHB size: byte, half-word or word
+SIGNAL sig_HTRANS : std_logic_vector (1 downto 0); -- AHB transfer: non-sequential only
+SIGNAL sig_HWDATA : std_logic_vector (31 downto 0); -- AHB write-data
+SIGNAL sig_HWRITE : std_logic; -- AHB write control
+SIGNAL sig_HRDATA : std_logic_vector (31 downto 0); -- AHB read-data
+SIGNAL sig_HREADY : std_logic; -- AHB stall signal
+
 
 --declare a component for AHB bridge
+COMPONENT AHB_bridge IS
+  PORT(
+    -- Clock and Reset -----------------
+    clkm : IN std_logic;
+    rstn : IN std_logic;
+    -- AHB Master records --------------
+    ahbmi : IN ahb_mst_in_type;
+    ahbmo : OUT ahb_mst_out_type;
+    -- ARM Cortex-M0 AHB-Lite signals -- 
+    HADDR : IN std_logic_vector (31 downto 0); -- AHB transaction address
+    HSIZE : IN std_logic_vector (2 downto 0); -- AHB size: byte, half-word or word
+    HTRANS : IN std_logic_vector (1 downto 0); -- AHB transfer: non-sequential only
+    HWDATA : IN std_logic_vector (31 downto 0); -- AHB write-data
+    HWRITE : IN std_logic; -- AHB write control
+    HRDATA : OUT std_logic_vector (31 downto 0); -- AHB read-data
+    HREADY : OUT std_logic -- AHB stall signal
+  );
+END COMPONENT;
+
 
 BEGIN
-  
   --instantiate CORTEXM0 component and make the connections
-  
-  --instantiate AHB_Bridge component and make the connections
-  
+  A1: CORTEXM0DS
+  PORT MAP(
+    HADDR => sig_HADDR,
+    HSIZE => sig_HSIZE,
+    HTRANS => sig_HTRANS,
+    HWDATA => sig_HWDATA,
+    HWRITE => sig_HWRITE,
+    HRDATA => sig_HRDATA,
+    HREADY => sig_HREADY,
+    
+    HCLK => clkm,
+    HRESETn => rstn
+  );
 
+
+  --instantiate AHB_Bridge component and make the connections
+  A2: AHB_bridge
+  PORT MAP(
+    HADDR => sig_HADDR,
+    HSIZE => sig_HSIZE,
+    HTRANS => sig_HTRANS,
+    HWDATA => sig_HWDATA,
+    HWRITE => sig_HWRITE,
+    HRDATA => sig_HRDATA,
+    HREADY => sig_HREADY,
+    
+    clkm => clkm,
+    rstn => rstn,
+    
+    ahbmi => ahbmi,
+    ahbmo => ahbmo
+  );
 END structure;
