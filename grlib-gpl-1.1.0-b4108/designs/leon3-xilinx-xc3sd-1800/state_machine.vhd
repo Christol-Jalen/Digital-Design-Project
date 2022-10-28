@@ -34,18 +34,18 @@ ARCHITECTURE structure of state_machine IS
   
 BEGIN 
   -----------------------------------------------------
-  Change: PROCESS(curState, dmao)
+  Change: PROCESS(curState, HTRANS, dmao)
   BEGIN
     CASE curState IS
       WHEN idle =>
-        IF HTRANS = '10' THEN 
+        IF HTRANS = "10" THEN 
           nextState <= instr_fetch;
         ELSE
           nextState <= curState;
         END IF;
         
       WHEN instr_fetch =>
-        IF dmao.ready ='1' THEN
+        IF dmao.ready = '1' THEN
           nextState <= idle;
         ELSE
           nextState <= curState;

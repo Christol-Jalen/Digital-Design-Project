@@ -519,7 +519,7 @@ R21
 !s100 ;kTb?3@>?8c<odLVn^6al2
 !i10b 1
 Estate_machine
-w1666967462
+Z75 w1666967728
 R2
 R3
 R4
@@ -532,8 +532,8 @@ R10
 R11
 R12
 R13
-8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/state_machine.vhd
-FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/state_machine.vhd
+Z76 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/state_machine.vhd
+Z77 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/state_machine.vhd
 l0
 L13
 VAL:g_IAiW;dKO0oYFo:Po0
@@ -541,18 +541,43 @@ VAL:g_IAiW;dKO0oYFo:Po0
 R16
 31
 !i10b 1
-!s108 1666967465.623000
-!s90 -reportprogress|300|-work|work|-93|-explicit|-quiet|-source|-nowarn|1|-nowarn|5|-novopt|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/state_machine.vhd|
-!s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/state_machine.vhd|
+Z78 !s108 1666967729.508000
+Z79 !s90 -reportprogress|300|-work|work|-93|-explicit|-quiet|-source|-nowarn|1|-nowarn|5|-novopt|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/state_machine.vhd|
+Z80 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/state_machine.vhd|
+R20
+R21
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+DEx4 work 13 state_machine 0 22 AL:g_IAiW;dKO0oYFo:Po0
+l35
+L30
+VBc00>EIlH=3?`Pa<5PC7g2
+!s100 g=nY2RPFG@CRF6D^kEWez3
+R16
+31
+!i10b 1
+R78
+R79
+R80
 R20
 R21
 Etestbench
-Z75 w1666870751
+Z81 w1666870751
 R61
-Z76 DPx4 work 5 debug 0 22 UKYDnZfS:aT>_415YS@3F3
-Z77 DPx5 hynix 17 hy5ps121621f_pack 0 22 2fTWOlB8ogXG774Wa;^@R0
-Z78 DPx5 hynix 10 components 0 22 o8_LgJF_XU[3A5M_AZLI@0
-Z79 DPx6 micron 10 components 0 22 0TIhCD]P[_JiP8=;eZK8f2
+Z82 DPx4 work 5 debug 0 22 UKYDnZfS:aT>_415YS@3F3
+Z83 DPx5 hynix 17 hy5ps121621f_pack 0 22 2fTWOlB8ogXG774Wa;^@R0
+Z84 DPx5 hynix 10 components 0 22 o8_LgJF_XU[3A5M_AZLI@0
+Z85 DPx6 micron 10 components 0 22 0TIhCD]P[_JiP8=;eZK8f2
 R54
 R55
 R3
@@ -564,20 +589,20 @@ R7
 R8
 R10
 R9
-Z80 DPx7 gaisler 7 libdcom 0 22 aBf[HY;mCCl`R5]fmGVVS0
+Z86 DPx7 gaisler 7 libdcom 0 22 aBf[HY;mCCl`R5]fmGVVS0
 R11
 R12
 R13
-Z81 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd
-Z82 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd
+Z87 8N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd
+Z88 FN:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd
 l0
 L42
 VQWHaMiY@PTmT?P5U?[MI_1
 R16
 31
-Z83 !s108 1666875943.759000
-Z84 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd|
-Z85 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd|
+Z89 !s108 1666875943.759000
+Z90 !s90 -reportprogress|300|-work|work|-93|-source|-nowarn|1|-nowarn|5|-cover|s|N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd|
+Z91 !s107 N:/GODS08/grlib-gpl-1.1.0-b4108/designs/leon3-xilinx-xc3sd-1800/testbench.vhd|
 R28
 R29
 R21
@@ -592,10 +617,10 @@ R67
 R68
 R74
 R61
-R76
-R77
-R78
-R79
+R82
+R83
+R84
+R85
 R54
 R55
 R3
@@ -607,7 +632,7 @@ R7
 R8
 R10
 R9
-R80
+R86
 R11
 R12
 DEx4 work 9 testbench 0 22 QWHaMiY@PTmT?P5U?[MI_1
@@ -616,9 +641,9 @@ L55
 V;FBK2MR[S>BiZ@^9KzJn83
 R16
 31
-R83
-R84
-R85
+R89
+R90
+R91
 R28
 R29
 R21
