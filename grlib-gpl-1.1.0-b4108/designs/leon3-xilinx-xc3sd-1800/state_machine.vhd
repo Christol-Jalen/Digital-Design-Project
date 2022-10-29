@@ -29,7 +29,7 @@ END;
 
 ARCHITECTURE structure of state_machine IS
   -- State declaration
-  TYPE state_type IS (idle, instr_fetch);  	
+  TYPE state_type IS (idle, instr_fetch, stage_start);  	
   SIGNAL curState, nextState: state_type;
   
 BEGIN 
@@ -38,12 +38,14 @@ BEGIN
   BEGIN
     CASE curState IS
       WHEN idle =>
-        IF HTRANS = "10" THEN 
-          nextState <= instr_fetch;
+        IF HTRANS = "10" THEN
+          nextState <= stage_start;
         ELSE
           nextState <= curState;
         END IF;
         
+      WHEN stage_start =>
+         nextState <= instr_fetch;
       WHEN instr_fetch =>
         IF dmao.ready = '1' THEN
           nextState <= idle;
@@ -58,7 +60,8 @@ BEGIN
     IF curState = idle THEN
       hready <= '1';
       dmai.start <= '0';
-      
+    ELSIF curState = stage_start THEN
+      dmai.start <= '1';
     ELSIF curState = instr_fetch THEN
       hready <= '0';
       dmai.start <= '0';
