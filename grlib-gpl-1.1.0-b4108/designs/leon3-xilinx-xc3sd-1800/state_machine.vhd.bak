@@ -34,7 +34,7 @@ ARCHITECTURE structure of state_machine IS
   
 BEGIN 
   -----------------------------------------------------
-  Change: PROCESS(curState, HTRANS, dmao, dmai)
+  Change: PROCESS(curState, HTRANS, dmao)
   BEGIN
     CASE curState IS
       WHEN idle =>
@@ -69,6 +69,9 @@ BEGIN
       dmai.size <= HSIZE;
       dmai.wdata <= HWDATA;
       dmai.write <= HWRITE;
+      dmai.burst <= '0';
+      dmai.busy <= '0';
+      dmai.irq <= '0';
     END IF;
   END PROCESS;
 -----------------------------------------------------

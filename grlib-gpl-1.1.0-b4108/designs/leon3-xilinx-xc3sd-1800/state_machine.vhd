@@ -60,6 +60,11 @@ BEGIN
     IF curState = idle THEN
       hready <= '1';
       dmai.start <= '0';
+      
+      dmai.address <= "00000000000000000000000000000000";
+      dmai.wdata <= "00000000000000000000000000000000";
+      dmai.write <= '0';
+      dmai.size <= "000";
     ELSIF curState = stage_start THEN
       dmai.start <= '1';
     ELSIF curState = instr_fetch THEN
@@ -69,6 +74,9 @@ BEGIN
       dmai.size <= HSIZE;
       dmai.wdata <= HWDATA;
       dmai.write <= HWRITE;
+      dmai.burst <= '0';
+      dmai.busy <= '0';
+      dmai.irq <= '0';
     END IF;
   END PROCESS;
 -----------------------------------------------------
