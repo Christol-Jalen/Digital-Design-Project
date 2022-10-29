@@ -18,13 +18,14 @@ ENTITY state_machine IS
       HWDATA : IN std_logic_vector (31 downto 0);
       HWRITE : IN std_logic;
       HREADY : OUT std_logic;
+      
       dmai : OUT ahb_dma_in_type;
-      dmao : IN ahb_dma_out_type; 
+      dmao : IN ahb_dma_out_type;
+      
       clkm : IN std_logic;
       rstn : IN std_logic
     );
 END;
-
 
 
 ARCHITECTURE structure of state_machine IS
@@ -38,66 +39,27 @@ BEGIN
   BEGIN
     CASE curState IS
       WHEN idle =>
+        hready <= '1';
+        dmai.start <= '0';
         IF HTRANS = "10" THEN
+          dmai.start <= '1';
           nextState <= instr_fetch;
         ELSE
           nextState <= curState;
         END IF;
         
       WHEN instr_fetch =>
+        hready <= '0';
+        dmai.start <= '0';
         IF dmao.ready = '1' THEN
+          hready <= '1';
           nextState <= idle;
         ELSE
           nextState <= curState;
         END IF;
     END CASE;
-  END PROCESS; -- NextState
-  -----------------------------------------------------
-  States: PROCESS (curState)
-  BEGIN
-    IF curState = idle THEN
-      hready <= '1';
-      dmai.start <= '0';
-      
-      IF HTRANS = "10" THEN
-          dmai.start <= '1';
-      END IF;
-    
-    ELSIF curState = instr_fetch THEN
-      hready <= '0';
-      dmai.start <= '0';
-      --dmai.address <= HADDR;
-      --dmai.size <= HSIZE;
-      --dmai.wdata <= HWDATA;
-      --dmai.write <= HWRITE;
-      --dmai.burst <= '0';
-      --dmai.busy <= '0';
-      --dmai.irq <= '0';
-      
-      IF dmao.ready = '1' THEN
-          hready <= '1';
-      END IF;
-    END IF;
   END PROCESS;
-  --States: PROCESS(curState)
-  --BEGIN
-    --CASE curState IS
-      --WHEN idle =>
-          --hready <= '1';
-          --dmai.start <= '0';
-        --IF HTRANS = "10" THEN
-          --dmai.start <= '1';
-        --END IF;
-        
-      --WHEN instr_fetch =>
-          --hready <= '0';
-          --dmai.start <= '0';
-        --IF dmao.ready = '1' THEN
-          --hready <= '1';
-        --END IF;
-    --END CASE;
-  --END PROCESS; -- NextState
-  
+  -----------------------------------------------------
   data_process: PROCESS (HADDR, HSIZE, HWDATA, HWRITE)
   BEGIN
     dmai.address <= HADDR;
