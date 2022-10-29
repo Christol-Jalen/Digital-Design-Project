@@ -29,7 +29,8 @@ END;
 
 ARCHITECTURE structure of state_machine IS
   -- State declaration
-  TYPE state_type IS (idle, instr_fetch, stage_start);  	
+  --TYPE state_type IS (idle, instr_fetch, stage_start);
+  TYPE state_type IS (idle, instr_fetch);  	
   SIGNAL curState, nextState: state_type;
   
 BEGIN 
@@ -39,13 +40,14 @@ BEGIN
     CASE curState IS
       WHEN idle =>
         IF HTRANS = "10" THEN
-          nextState <= stage_start;
+          --nextState <= stage_start;
+          nextState <= instr_fetch;
         ELSE
           nextState <= curState;
         END IF;
         
-      WHEN stage_start =>
-         nextState <= instr_fetch;
+      --WHEN stage_start =>
+         --nextState <= instr_fetch;
       WHEN instr_fetch =>
         IF dmao.ready = '1' THEN
           nextState <= idle;
@@ -55,29 +57,53 @@ BEGIN
     END CASE;
   END PROCESS; -- NextState
   -----------------------------------------------------
-  States: PROCESS (curState)
+  --States: PROCESS (curState)
+  --BEGIN
+    --IF curState = idle THEN
+      --hready <= '1';
+      --dmai.start <= '0';
+    --ELSIF curState = stage_start THEN
+      --dmai.start <= '1';
+    --ELSIF curState = instr_fetch THEN
+      --hready <= '0';
+      --dmai.start <= '0';
+      --dmai.address <= HADDR;
+      --dmai.size <= HSIZE;
+      --dmai.wdata <= HWDATA;
+      --dmai.write <= HWRITE;
+      --dmai.burst <= '0';
+      --dmai.busy <= '0';
+      --dmai.irq <= '0';
+    --END IF;
+  --END PROCESS;
+  States: PROCESS(curState)
   BEGIN
-    IF curState = idle THEN
-      hready <= '1';
-      dmai.start <= '0';
-      
-      dmai.address <= "00000000000000000000000000000000";
-      dmai.wdata <= "00000000000000000000000000000000";
-      dmai.write <= '0';
-      dmai.size <= "000";
-    ELSIF curState = stage_start THEN
-      dmai.start <= '1';
-    ELSIF curState = instr_fetch THEN
-      hready <= '0';
-      dmai.start <= '0';
-      dmai.address <= HADDR;
-      dmai.size <= HSIZE;
-      dmai.wdata <= HWDATA;
-      dmai.write <= HWRITE;
-      dmai.burst <= '0';
-      dmai.busy <= '0';
-      dmai.irq <= '0';
-    END IF;
+    CASE curState IS
+      WHEN idle =>
+          hready <= '1';
+          dmai.start <= '0';
+        IF HTRANS = "10" THEN
+          dmai.start <= '1';
+        END IF;
+        
+      WHEN instr_fetch =>
+          hready <= '0';
+          dmai.start <= '0';
+        IF dmao.ready = '1' THEN
+          hready <= '1';
+        END IF;
+    END CASE;
+  END PROCESS; -- NextState
+  
+  data_process: PROCESS (HADDR, HSIZE, HWDATA, HWRITE)
+  BEGIN
+    dmai.address <= HADDR;
+    dmai.size <= HSIZE;
+    dmai.wdata <= HWDATA;
+    dmai.write <= HWRITE;
+    dmai.burst <= '0';
+    dmai.busy <= '0';
+    dmai.irq <= '0';
   END PROCESS;
 -----------------------------------------------------
   seq_state: PROCESS (clkm, rstn)
